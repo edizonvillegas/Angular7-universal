@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"><img src="assets/img/iwant-logo-desktop.png" alt=""></a>
+		<div class="collapse navbar-collapse" [class.show]="toggle" id="navbarNav">
+			<div class="rel">
+				<button class="navbar-toggler" type="button" (click)="collapse()">
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+				</button>
+			</div>
+			<ul class="nav navbar-nav mr-auto">
+				<li class="nav-item dropdown" *ngFor="let menu of headerMenu; let i = index"><a class="nav-link dropdown-toggle" (mouseover)="countLi(i)" (click)="toggleSubMenu(i)" routerLink="{{ menu.url }}" >{{ menu.name }}</a>
+				
+			        <ul class="{{ 'item'+i }} dropdown-menu" [class.showSubMenu]="toggleSub === true">
+						<li *ngFor="let sub of menu.subMenu">
+							<ul>
+								<li><p>{{ sub.subName }}</p></li>
+								<li class="pad">
+									<ul class="sub">
+										<li *ngFor="let subs of menu.subMenu; let i = index" class="dropdown-item">
+											<ul>
+												<li *ngFor="let subs2 of subs.subGenre; let i = index"><a href="">{{ subs2.genreName }}</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+			    
+				</li>
+			</ul>
+		</div>
+		<ul class="list-inline searchArea">
+			<li class="list-inline-item"><a href="#"><i class="fa fa-search"></i></a></li>
+			<li class="list-inline-item"><a href="#"><span class="hidden-xs">Sign In</span><span class="visible-xs"><i class="fa fa-user"></i></span></a></li>
+		</ul>
+	</div>
+</nav>

@@ -1,1 +1,373 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+	max-height: 100%;
+	height: 100%;
+}
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.container-fluid {
+	width: 90%!important;
+}
+.list-inline {
+	margin-bottom: 0;
+}
+.visible-xs {
+	display: none;
+}
+.hidden-xs {
+	display: block;
+}
+
+.navbar .navbar-brand>img {
+    display: block;
+    max-width: 180px;
+    max-height: 76px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.navbar .navbar-brand {
+	position: relative;
+	height: 90px;
+	width: 180px;
+}
+
+.navbar .navbar-nav>li>a {
+	color: #fff!important;
+	padding: 35px 20px!important;
+}
+
+.dropdown-toggle::after {
+	content: none;
+}
+
+.searchArea li:first-child {
+	position: relative;
+	margin: 0 18px;
+}
+.searchArea li:first-child:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 1px;
+	height: 23px;
+	background: #333;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: -10px;
+}
+.subMenus {
+	columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+.dropdown-menu p {
+    display: block;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    padding: 10px 20px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .1em;
+    margin-bottom: 0;
+}
+.navbar .dropdown-menu a:hover {
+    background: #636363;
+    text-decoration: none;
+}
+ul .dropdown:hover > .dropdown-menu {
+    display: inline-block;
+    top: 94px;
+    background: rgba(0,0,0,.5);
+    border: 0;
+    border-top: 1px solid #333;
+    border-radius: 0;
+    padding-top: 0;
+    margin: 0 auto;
+}
+ul .dropdown > .dropdown-menu {
+  display:none;
+}
+
+.navbar .dropdown-menu a {
+	color: #fff;
+	text-align: left;
+	display: block;
+	padding: 10px 20px;
+}
+
+ul.dropdown-menu:before {
+	content: "";
+	position: absolute;
+	left: 20px;
+	margin: auto;
+	top: -11px;
+	border-color: transparent transparent #333 transparent;
+	border-style: solid;
+	border-width: 0 10px 10px 10px;
+	height: 0;
+	width: 0;
+}
+
+.dropdown-item:hover {
+	background: inherit;
+}
+
+.showSubMenu .dropdown-menu {
+	padding: 10px;
+}
+
+.dropdown-item {
+	padding: 0;
+}
+
+.dropdown li ul,
+.dropdown li ul li ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.showSubMenu {
+	display: block!important;
+}
+
+.nav-item .dropdown-menu {
+	display: block;
+	max-height: 50vh;
+}
+
+.dropdown.showSubMenu {
+    position: fixed;
+    width: 250px;
+    top: 0;
+    left: 0;
+    background: #000!important;
+    z-index: 999;
+    height: 100vh;
+    display: table!important;
+}
+
+.showSubMenu.dropdown-menu {
+	background: #000;
+}
+
+.dropdown.showSubMenu  li,
+.nav-item .dropdown-menu {
+	max-height: 90vh!important;
+}
+
+.bg-light {
+    background: rgba(0,0,0,.5)!important;
+    padding: 0;
+}
+
+.dropdown-toggle:after {
+	border-right: 0;
+}
+.showSubMenu .dropdown-toggle:after {
+    transform: rotate(225deg);
+    top: -10px;
+    transition: .5s;
+}
+.pad {
+	padding: 10px;
+}
+
+@media(max-width: 991px) {
+	.dropdown-menu p {
+		border-bottom: 1px solid #fff;
+	    border-top: 1px solid #fff;
+	}
+	.dropdown li ul li ul {
+		max-height: 81vh;
+	}
+	.showSubMenu {
+		padding: 0!important;
+	}
+	ul.dropdown-menu:before {
+		content: none;
+	}
+	::-webkit-scrollbar {
+		display: none;
+	}
+	::-ms-scrollbar {
+		display: none!important;
+	}
+	.dropdown-menu ul {
+		-ms-overflow-style: none;
+    scrollbar-width: none;
+	}
+	.dropdown-item {
+		overflow-y: scroll;
+	}
+	.subMenus {
+		columns: 1;
+	    -webkit-columns: 1;
+	    -moz-columns: 1;
+	    overflow-y: scroll;
+	}
+	.navbar .navbar-nav>li>a {
+    	padding: 1rem .5rem!important;
+	}
+	.showSubMenu .dropdown-menu {
+	    padding-bottom: 20px;
+	}
+	.nav-item .dropdown-menu {
+
+	}
+	ul .dropdown:hover > .dropdown-menu {
+	  display:none;
+	  border: 0;
+	  top: 0;
+	}
+	ul .dropdown > .dropdown-menu {
+	  display:none;
+	}
+	.container {
+	    max-width: 100%;
+	}
+	.dropdown {
+		width: 250px;
+	}
+	.menuWrapper {
+		position: relative;
+		width: 	100%;
+	}
+	.navbar-light .navbar-toggler {
+		border: 0;
+		outline: 0;
+		display: block!important;
+	}
+	.nav-item a {
+		display: block;
+		color: #fff!important;
+		padding: 15px!important;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.navbar-toggler {
+		float: right;
+		cursor: pointer;
+		z-index: 99;
+		color: #fff;
+		position: absolute;
+		right: -60px;
+		top: 10px;
+	}
+	#navbarNav {
+		display: block!important;
+	    position: fixed;
+	    top: 0;
+	    left: -250px;
+	    background: #333;
+	    z-index: 10;
+	    height: 100%;
+	    width: 250px;
+	    transition: .5s;
+	}
+	.show {
+		left: 0!important;
+
+	}
+	.show:after {
+		content: "";
+		background: rgba(0,0,0,.5);
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	.show.rel {
+		position: absolute;
+		left: -55px;
+	}
+	.show.rel {
+		transform: rotate(90deg);
+	}
+	.hamburger {
+	    background: #333;
+	    width: 40px;
+	    height: 5px;
+	    display: block;
+	    margin-bottom: 7px;
+	    transition: .5s;
+	}
+	.show .hamburger {
+		background: #fff!important;
+	}
+	.show .hamburger:last-child {
+		display: none;
+	}
+	.show .hamburger:first-child {
+		transform: rotate(45deg);
+		top: 12px;
+		position: relative;
+	}
+	.show .hamburger:nth-child(2) {
+		transform: rotate(-45deg);
+	}
+	.nav-link,
+	.navbar .dropdown-item a {
+		position: relative;
+	}
+	.nav-link:after,
+	.navbar .dropdown-item a:after {
+		content: "";
+		border-top: 3px solid #fff;
+		border-left: 3px solid #fff;
+		width: 15px;
+		height: 15px;
+		display: inline-block;
+		transform: rotate(135deg);
+		right: 15px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	.navbar-light .navbar-brand {
+	    display: table;
+	    margin: 0 auto;
+	}
+	.searchArea li a {
+	    font-size: 24px;
+	    color: #333;
+	}
+	.searchArea {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+	}
+	.navbar-expand-md .navbar-nav .dropdown-menu {
+		position: relative!important;
+		border: none;
+		margin: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.navbar-expand-md .navbar-nav .dropdown-menu {
+		position: relative!important;
+		border: none;
+	}
+}
+
+@media (max-width: 440px) {
+	.hidden-xs {
+		display: none;
+	}
+	.visible-xs {
+		display: block;
+	}
+}
