@@ -170,15 +170,15 @@ ul.dropdown-menu:before {
 
 @media(max-width: 991px) {
 	.dropdown.showSubMenu {
-    position: fixed;
-    width: 250px;
-    top: 0;
-    left: 0;
-    background: #000!important;
-    z-index: 999;
-    height: 100vh;
-    display: table!important;
-}
+	    position: fixed;
+	    width: 250px;
+	    top: 0;
+	    left: 0;
+	    background: #000!important;
+	    z-index: 999;
+	    height: 100vh;
+	    display: table!important;
+	}
 
 .showSubMenu.dropdown-menu {
 	background: #000;
@@ -190,7 +190,7 @@ ul.dropdown-menu:before {
 }
 .dropdown.showSubMenu  li,
 .nav-item .dropdown-menu {
-	max-height: 65vh!important;
+	max-height: 75vh!important;
 }
 	.hideMobile {
 		display: none!important;
@@ -367,9 +367,6 @@ ul.dropdown-menu:before {
 		position: relative!important;
 		border: none;
 		margin: 0;
-	}
-	.dropdown.showSubMenu li, .nav-item .dropdown-menu {
-	    max-height: 90vh!important;
 	}
 }
 
