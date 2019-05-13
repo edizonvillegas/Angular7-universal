@@ -28,6 +28,25 @@ export class NavbarComponent implements OnInit {
 			this.headerMenu = data
 		})
 
+		var doit;
+		window.onresize = function(){
+		  clearTimeout(doit);
+		  doit = setTimeout(function() {
+		  	if(window.innerWidth > 991) {
+		  		let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
+				ddown = document.querySelectorAll('.navbar-nav .dropdown')
+				for (var i = 0; i < menuList.length; i++) {
+					if (ddown[i].classList.contains('showSubMenu') ) {
+						menuList[i].classList.remove('showSubMenu')
+						ddown[i].classList.remove('showSubMenu')
+					}
+				}
+		  	}
+		  }, 100);
+		};
+
+		
+
 	}
 
 	countLi(i) {
@@ -57,7 +76,7 @@ export class NavbarComponent implements OnInit {
 
 	}
 
-	toggleSubMenu(i, url) {
+	toggleSubMenu(i) {
 		if (this.mq.matches) {
 			let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
 				ddown = document.querySelectorAll('.navbar-nav .dropdown')
@@ -69,6 +88,9 @@ export class NavbarComponent implements OnInit {
 				menuList[i].classList.add('showSubMenu')
 				ddown[i].classList.add('showSubMenu')
 			}
+		} else {
+			menuList[i].classList.remove('showSubMenu')
+				ddown[i].classList.remove('showSubMenu')
 		}
 	}
 

@@ -2,6 +2,12 @@ html, body {
 	max-height: 100%;
 	height: 100%;
 }
+::-webkit-scrollbar {
+	display: none;
+}
+::-ms-scrollbar {
+	display: none!important;
+}
 li {
 	list-style: none;
 }
@@ -143,10 +149,27 @@ ul.dropdown-menu:before {
 
 .nav-item .dropdown-menu {
 	display: block;
-	max-height: 50vh;
 }
 
-.dropdown.showSubMenu {
+
+
+.bg-light {
+    background: rgba(0,0,0,.5)!important;
+    padding: 0;
+}
+
+.dropdown-toggle:after {
+	border-right: 0;
+}
+
+.pad {
+    padding: 10px;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+@media(max-width: 991px) {
+	.dropdown.showSubMenu {
     position: fixed;
     width: 250px;
     top: 0;
@@ -160,30 +183,15 @@ ul.dropdown-menu:before {
 .showSubMenu.dropdown-menu {
 	background: #000;
 }
-
-.dropdown.showSubMenu  li,
-.nav-item .dropdown-menu {
-	max-height: 65vh!important;
-}
-
-.bg-light {
-    background: rgba(0,0,0,.5)!important;
-    padding: 0;
-}
-
-.dropdown-toggle:after {
-	border-right: 0;
-}
 .showSubMenu .dropdown-toggle:after {
     transform: rotate(225deg);
     top: -10px;
     transition: .5s;
 }
-.pad {
-	padding: 10px;
+.dropdown.showSubMenu  li,
+.nav-item .dropdown-menu {
+	max-height: 65vh!important;
 }
-
-@media(max-width: 991px) {
 	.hideMobile {
 		display: none!important;
 	}
@@ -203,12 +211,7 @@ ul.dropdown-menu:before {
 	ul.dropdown-menu:before {
 		content: none;
 	}
-	::-webkit-scrollbar {
-		display: none;
-	}
-	::-ms-scrollbar {
-		display: none!important;
-	}
+	
 	.dropdown-menu ul {
 		-ms-overflow-style: none;
     scrollbar-width: none;
