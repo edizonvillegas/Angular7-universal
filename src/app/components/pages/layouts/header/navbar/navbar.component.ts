@@ -35,6 +35,7 @@ export class NavbarComponent implements OnInit {
 		  	if(window.innerWidth > 991) {
 		  		let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
 				ddown = document.querySelectorAll('.navbar-nav .dropdown')
+
 				for (var i = 0; i < menuList.length; i++) {
 					if (ddown[i].classList.contains('showSubMenu') ) {
 						menuList[i].classList.remove('showSubMenu')
@@ -77,6 +78,9 @@ export class NavbarComponent implements OnInit {
 	}
 
 	toggleSubMenu(i) {
+		let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
+			ddown = document.querySelectorAll('.navbar-nav .dropdown')
+
 		if (this.mq.matches) {
 			let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
 				ddown = document.querySelectorAll('.navbar-nav .dropdown')
@@ -90,7 +94,7 @@ export class NavbarComponent implements OnInit {
 			}
 		} else {
 			menuList[i].classList.remove('showSubMenu')
-				ddown[i].classList.remove('showSubMenu')
+			ddown[i].classList.remove('showSubMenu')
 		}
 	}
 
