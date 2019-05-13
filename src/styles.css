@@ -203,7 +203,7 @@ ul.dropdown-menu:before {
 	    border-top: 1px solid #fff;
 	}
 	.dropdown li ul li ul {
-		max-height: 81vh;
+		max-height: 90%;
 	}
 	.showSubMenu {
 		padding: 0!important;
@@ -368,12 +368,18 @@ ul.dropdown-menu:before {
 		border: none;
 		margin: 0;
 	}
+	.dropdown.showSubMenu li, .nav-item .dropdown-menu {
+	    max-height: 90vh!important;
+	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	.navbar-expand-md .navbar-nav .dropdown-menu {
 		position: relative!important;
 		border: none;
+	}
+	.dropdown.showSubMenu li, .nav-item .dropdown-menu {
+	    max-height: 70vh!important;
 	}
 }
 
@@ -383,5 +389,20 @@ ul.dropdown-menu:before {
 	}
 	.visible-xs {
 		display: block;
+	}
+	.dropdown.showSubMenu li, .nav-item .dropdown-menu {
+	    max-height: 85vh!important;
+	}
+}
+
+@media (max-width: 412px) {
+	.dropdown.showSubMenu li, .nav-item .dropdown-menu {
+	    max-height: 80vh!important;
+	}
+}
+
+@media (max-width: 375px) {
+	.dropdown.showSubMenu li, .nav-item .dropdown-menu {
+	    max-height: 84vh!important;
 	}
 }
