@@ -10,7 +10,9 @@
 				</button>
 			</div>
 			<ul class="nav navbar-nav mr-auto">
-				<li class="nav-item dropdown" *ngFor="let menu of headerMenu; let i = index"><a class="nav-link dropdown-toggle" (mouseover)="countLi(i)" (click)="toggleSubMenu(i)" routerLink="{{ menu.url }}" >{{ menu.name }}</a>
+				<li class="nav-item dropdown" *ngFor="let menu of headerMenu; let i = index">
+					<a class="nav-link dropdown-toggle hideMobile" (mouseover)="countLi(i)" (click)="toggleSubMenu(i)" routerLink="about">{{ menu.name }}</a>
+					<a class="nav-link dropdown-toggle hideDesktop" (mouseover)="countLi(i)" (click)="toggleSubMenu(i)">{{ menu.name }}</a>
 				
 			        <ul class="{{ 'item'+i }} dropdown-menu" [class.showSubMenu]="toggleSub === true">
 						<li *ngFor="let sub of menu.subMenu">
@@ -20,7 +22,7 @@
 									<ul class="sub">
 										<li *ngFor="let subs of menu.subMenu; let i = index" class="dropdown-item">
 											<ul>
-												<li *ngFor="let subs2 of subs.subGenre; let i = index"><a href="">{{ subs2.genreName }}</a></li>
+												<li *ngFor="let subs2 of subs.subGenre; let i = index"><a routerLink="">{{ subs2.genreName }}</a></li>
 											</ul>
 										</li>
 									</ul>

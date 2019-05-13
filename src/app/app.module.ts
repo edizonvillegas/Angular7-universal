@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/pages/layouts/header/header.component';
 import { NavbarComponent } from './components/pages/layouts/header/navbar/navbar.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { AboutComponent } from './components/pages/about/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

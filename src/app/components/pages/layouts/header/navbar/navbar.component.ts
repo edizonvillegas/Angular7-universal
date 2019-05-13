@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { HeaderService } from '../../../../../services/header/header.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { HeaderService } from '../../../../../services/header/header.service';
 export class NavbarComponent implements OnInit {
 
 	toggle: boolean = false
+	isMobile: boolean = false
 	toggleSub: boolean = false
 	headerMenu: Object
 	dropdown: string = 'dropdown-menu'
@@ -17,16 +18,20 @@ export class NavbarComponent implements OnInit {
 
 
 	constructor(
-		private _header: HeaderService
+		private _header: HeaderService,
+		private _router: Router
 	) { }
 
 
 	ngOnInit() {
 		this.toggle = false
+		this.isMobile = true
 		this._header.getHeader().subscribe(data => {
 			this.headerMenu = data
 		})
-
+		if (!this.mq.matches) {
+			this.isMobile = false
+		}
 		
 	}
 
@@ -34,7 +39,7 @@ export class NavbarComponent implements OnInit {
 		if (!this.mq.matches) {
 			let ddown = document.querySelectorAll('.dropdown'),
 				countLi = ddown[i].querySelectorAll('.sub li').length
-				if (countLi > 2) {
+				if (countLi > 5) {
 					ddown[i].querySelector('.sub').classList.add('subMenus')
 				}
 		}
@@ -57,12 +62,13 @@ export class NavbarComponent implements OnInit {
 		}
 	}
 
-	toggleSubMenu(i) {
+	toggleSubMenu(i, url) {
 		 
 
 		if (this.mq.matches) {
 			let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
 				ddown = document.querySelectorAll('.navbar-nav .dropdown')
+
 
 			if (ddown[i].classList.contains('showSubMenu') ) {
 				menuList[i].classList.remove('showSubMenu')
@@ -70,8 +76,9 @@ export class NavbarComponent implements OnInit {
 			} else {
 				menuList[i].classList.add('showSubMenu')
 				ddown[i].classList.add('showSubMenu')
-			
 			}
+				this.isMobile = true
+			this.isMobile = true
 		}
 
 	}
