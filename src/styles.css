@@ -163,7 +163,7 @@ ul.dropdown-menu:before {
 
 .dropdown.showSubMenu  li,
 .nav-item .dropdown-menu {
-	max-height: 90vh!important;
+	max-height: 65vh!important;
 }
 
 .bg-light {
