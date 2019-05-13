@@ -10,7 +10,6 @@ import { HeaderService } from '../../../../../services/header/header.service';
 export class NavbarComponent implements OnInit {
 
 	toggle: boolean = false
-	isMobile: boolean = false
 	toggleSub: boolean = false
 	headerMenu: Object
 	dropdown: string = 'dropdown-menu'
@@ -25,29 +24,25 @@ export class NavbarComponent implements OnInit {
 
 	ngOnInit() {
 		this.toggle = false
-		this.isMobile = true
 		this._header.getHeader().subscribe(data => {
 			this.headerMenu = data
 		})
-		if (!this.mq.matches) {
-			this.isMobile = false
-		}
-		
+
 	}
 
 	countLi(i) {
 		if (!this.mq.matches) {
 			let ddown = document.querySelectorAll('.dropdown'),
 				countLi = ddown[i].querySelectorAll('.sub li').length
-				if (countLi > 5) {
-					ddown[i].querySelector('.sub').classList.add('subMenus')
-				}
+			if (countLi > 5) {
+				ddown[i].querySelector('.sub').classList.add('subMenus')
+			}
 		}
 	}
 
 	collapse() {
 		let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
-				ddown = document.querySelectorAll('.navbar-nav .dropdown')
+			ddown = document.querySelectorAll('.navbar-nav .dropdown')
 
 		if (this.toggle == false) {
 			this.toggle = true
@@ -58,17 +53,14 @@ export class NavbarComponent implements OnInit {
 				menuList[x].classList.remove('showSubMenu')
 				ddown[x].classList.remove('showSubMenu')
 			}
-			
 		}
+
 	}
 
 	toggleSubMenu(i, url) {
-		 
-
 		if (this.mq.matches) {
 			let menuList = document.querySelectorAll('.navbar-nav .nav-item .dropdown-menu'),
 				ddown = document.querySelectorAll('.navbar-nav .dropdown')
-
 
 			if (ddown[i].classList.contains('showSubMenu') ) {
 				menuList[i].classList.remove('showSubMenu')
@@ -77,10 +69,7 @@ export class NavbarComponent implements OnInit {
 				menuList[i].classList.add('showSubMenu')
 				ddown[i].classList.add('showSubMenu')
 			}
-				this.isMobile = true
-			this.isMobile = true
 		}
-
 	}
 
 }

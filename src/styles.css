@@ -283,7 +283,10 @@ ul.dropdown-menu:before {
 	}
 	.show {
 		left: 0!important;
-
+	}
+	.scroll {
+		overflow-y: scroll;
+		height: 100vh;
 	}
 	.show:after {
 		content: "";
